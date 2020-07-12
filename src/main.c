@@ -9,7 +9,8 @@
 
 #define FILE_INODE 2
 #define FILE_NAME "file.bin"
-#define FILE_SIZE  (2 * 1024)
+#define FILE_SIZE  (100 * 1024 * 1024)
+//#define FILE_SIZE  (44 * 1024)
 
 struct wf_mountpoint *
 create_mountpoint(
@@ -59,6 +60,7 @@ static void on_lookup(
     void * user_data)
 {
     (void) user_data;
+
     struct stat info;
     memset(&info, 0, sizeof(struct stat));
 
@@ -82,6 +84,7 @@ static void on_getattr(
     void * user_data)
 {
     (void) user_data;
+
     struct stat info;
     memset(&info, 0, sizeof(struct stat));
 
